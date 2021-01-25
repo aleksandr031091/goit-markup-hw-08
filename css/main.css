@@ -1106,8 +1106,21 @@ img {
 
 .portfolio-nav {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-nav {
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio-nav {
+    padding-bottom: 50px;
+  }
 }
 
 .portfolio-nav .items:not(:last-child) {
@@ -1115,16 +1128,32 @@ img {
 }
 
 .portfolio-box {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: -30px;
   margin-left: -30px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-box {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .portfolio-box .items {
   margin-top: 30px;
   margin-left: 30px;
-  width: calc((100% / 3) - 30px);
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-box .items {
+    width: calc((100% / 2) - 30px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio-box .items {
+    width: calc((100% / 3) - 30px);
+  }
 }
 
 .portfolio-box .link:focus,
