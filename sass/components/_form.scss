@@ -172,7 +172,7 @@
 
 .input-subscribe {
   display: block;
-  width: 450px;
+  width: 100%;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -186,6 +186,10 @@
   outline: none;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include for-size(tablet) {
+    width: 450px;
+  }
 
   &:focus {
     border-color: #2196f3;

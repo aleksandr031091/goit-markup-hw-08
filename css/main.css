@@ -143,7 +143,6 @@ img {
 
 @media screen and (min-width: 1200px) {
   .container-footer {
-    display: flex;
     justify-content: space-between;
     align-items: baseline;
     width: 1200px;
@@ -513,7 +512,7 @@ img {
 
 .input-subscribe {
   display: block;
-  width: 450px;
+  width: 100%;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -525,6 +524,12 @@ img {
   border-radius: 4px;
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .input-subscribe {
+    width: 450px;
+  }
 }
 
 .input-subscribe:focus {
@@ -603,12 +608,24 @@ img {
 }
 
 .auth-nav {
-  display: flex;
-  margin-left: auto;
+  display: none;
 }
 
-.auth-nav .items:not(:last-child) {
-  margin-right: 50px;
+@media screen and (min-width: 768px) {
+  .auth-nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 84px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .auth-nav {
+    margin-left: auto;
+  }
+  .auth-nav .items:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 .auth-nav .link {
@@ -625,18 +642,46 @@ img {
   color: var(--accentcolor);
 }
 
-.auth-nav .link:hover .aut-svg,
-.auth-nav .link:hover .aut-svg, .auth-nav .link:focus .aut-svg,
-.auth-nav .link:focus .aut-svg {
+.auth-nav .link:hover .aut-svg-envelope,
+.auth-nav .link:hover .aut-svg-smartfone,
+.auth-nav .link:hover .aut-svg-envelope,
+.auth-nav .link:hover .aut-svg-smartfone, .auth-nav .link:focus .aut-svg-envelope,
+.auth-nav .link:focus .aut-svg-smartfone,
+.auth-nav .link:focus .aut-svg-envelope,
+.auth-nav .link:focus .aut-svg-smartfone {
   fill: var(--accentcolor);
 }
 
-.aut-svg {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
+.aut-svg-envelope {
+  width: 14px;
+  height: 10px;
+  margin-right: 8px;
   fill: #757575;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 1200px) {
+  .aut-svg-envelope {
+    width: 18px;
+    height: 12px;
+    margin-right: 10px;
+  }
+}
+
+.aut-svg-smartfone {
+  width: 10px;
+  height: 14px;
+  margin-right: 8px;
+  fill: #757575;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 1200px) {
+  .aut-svg-smartfone {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+  }
 }
 
 .citi-address {
@@ -692,7 +737,13 @@ img {
 }
 
 .site-nav {
-  display: flex;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .site-nav {
+    display: flex;
+  }
 }
 
 .site-nav .items:first-child {

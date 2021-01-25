@@ -1,9 +1,18 @@
 .auth-nav {
-  display: flex;
-  margin-left: auto;
+  display: none;
 
-  & .items:not(:last-child) {
-    margin-right: 50px;
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 84px;
+  }
+
+  @include for-size(desktop) {
+    margin-left: auto;
+
+    .items:not(:last-child) {
+      margin-right: 50px;
+    }
   }
 
   & .link {
@@ -20,19 +29,40 @@
     &:focus {
       color: var(--accentcolor);
 
-      & .aut-svg,
-      & .aut-svg {
+      & .aut-svg-envelope,
+      .aut-svg-smartfone,
+      & .aut-svg-envelope,
+      .aut-svg-smartfone {
         fill: var(--accentcolor);
       }
     }
   }
 }
-.aut-svg {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
+.aut-svg-envelope {
+  width: 14px;
+  height: 10px;
+  margin-right: 8px;
   fill: #757575;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include for-size(desktop) {
+    width: 18px;
+    height: 12px;
+    margin-right: 10px;
+  }
+}
+.aut-svg-smartfone {
+  width: 10px;
+  height: 14px;
+  margin-right: 8px;
+  fill: #757575;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include for-size(desktop) {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+  }
 }
 
 .citi-address {

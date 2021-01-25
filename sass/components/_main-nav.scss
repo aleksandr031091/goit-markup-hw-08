@@ -1,5 +1,9 @@
 .site-nav {
-  display: flex;
+  display: none;
+
+  @include for-size(tablet) {
+    display: flex;
+  }
 
   & .items:first-child {
     margin-left: 93px;

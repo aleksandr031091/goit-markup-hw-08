@@ -55,7 +55,6 @@
   }
 
   @include for-size(desktop) {
-    display: flex;
     justify-content: space-between;
     align-items: baseline;
 
