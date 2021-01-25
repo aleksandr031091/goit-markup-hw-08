@@ -50,9 +50,7 @@
 
   @include for-size(tablet) {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
+    flex-wrap: wrap;
     width: 768px;
   }
 

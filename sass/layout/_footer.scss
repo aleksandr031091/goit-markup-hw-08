@@ -1,5 +1,4 @@
 .footer-head {
-  display: flex;
   padding-top: 60px;
   padding-bottom: 60px;
 
@@ -7,9 +6,26 @@
 }
 
 .contact-box {
-  width: calc((50% - 45px) / 2);
+  margin-bottom: 60px;
+
+  @include for-size(tablet) {
+    margin-bottom: 0;
+    width: calc((100% - 30px) / 2);
+  }
+
+  @include for-size(desktop) {
+    width: calc((50% - 45px) / 2);
+  }
 }
 
 .subscribe-box {
-  width: calc(50% - 15px);
+  @include for-size(tablet) {
+    padding-top: 60px;
+    width: calc(100% - 30px);
+  }
+
+  @include for-size(desktop) {
+    padding-top: 0;
+    width: calc(50% - 15px);
+  }
 }

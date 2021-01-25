@@ -39,6 +39,11 @@
   line-height: 1.14;
   text-transform: uppercase;
   color: #212121;
+  text-align: center;
+
+  @include for-size(tablet) {
+    text-align: left;
+  }
 }
 .section-title-name {
   margin-top: 0%;

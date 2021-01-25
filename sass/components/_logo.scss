@@ -6,9 +6,14 @@
   letter-spacing: 0.03em;
   color: #212121;
   text-decoration: none;
+  text-align: center;
+
+  @include for-size(desktop) {
+    text-align: left;
+  }
 
   .contact-box & {
-    display: inline-block;
+    display: block;
     margin-bottom: 20px;
     color: var(--primarycolor);
   }

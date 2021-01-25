@@ -139,13 +139,28 @@
   line-height: 1.142;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--primarycolor);
+
+  @include for-size(desktop) {
+    text-align: left;
+  }
 }
 .subscribe-form {
-  display: flex;
+  @include for-size(desktop) {
+    display: flex;
+  }
 
   & .button-subscribe {
-    margin-left: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    @include for-size(desktop) {
+      margin-left: 10px;
+      margin-top: 0%;
+    }
   }
 }
 .button-subscribe-svg {

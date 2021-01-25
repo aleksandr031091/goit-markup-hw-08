@@ -55,8 +55,12 @@
 
 .advantages-description {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 
   font-size: 14px;
   line-height: 1.71;
+
+  @include for-size(tablet) {
+    margin-bottom: 0;
+  }
 }

@@ -4,13 +4,23 @@
   line-height: 1.142;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-align: center;
 
   color: var(--primarycolor);
+
+  @include for-size(desktop) {
+    text-align: left;
+  }
 }
 .list-social {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
 
-  .item:not(:last-child) {
+  @include for-size(desktop) {
+    display: inline-flex;
+  }
+
+  .items:not(:last-child) {
     margin-right: 10px;
   }
 }
