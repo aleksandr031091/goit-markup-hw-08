@@ -1,0 +1,11 @@
+.head {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  background-color: var(--primarycolor);
+  border-bottom: 1px solid #ececec;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+}

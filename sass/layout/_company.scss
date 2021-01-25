@@ -1,0 +1,47 @@
+.company {
+  display: flex;
+  margin-top: -30px;
+  margin-left: -30px;
+
+  & .company-box {
+    width: calc((100% / 6) - 30px);
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+.company-box {
+  width: 170px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+
+  & .company {
+    display: flex;
+  }
+}
+.company-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border-color: var(--accentcolor);
+
+    & .icon,
+    & .icon {
+      fill: var(--accentcolor);
+    }
+  }
+}
+.icon {
+  fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,15 @@
+.footer-head {
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: #2f303a;
+}
+
+.contact-box {
+  width: calc((50% - 45px) / 2);
+}
+
+.subscribe-box {
+  width: calc(50% - 15px);
+}
