@@ -8,14 +8,10 @@
   color: var(--primarycolor);
 }
 .list-social {
-  display: flex;
+  display: inline-flex;
 
-  & .items {
-    width: calc((100% / 4) - 10px);
-  }
-
-  .card-description & {
-    justify-content: space-around;
+  .item:not(:last-child) {
+    margin-right: 10px;
   }
 }
 

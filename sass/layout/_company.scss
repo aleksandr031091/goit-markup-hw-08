@@ -1,22 +1,38 @@
 .company {
   display: flex;
+  flex-wrap: wrap;
   margin-top: -30px;
   margin-left: -30px;
 
   & .company-box {
-    width: calc((100% / 6) - 30px);
     margin-top: 30px;
     margin-left: 30px;
-  }
-}
-.company-box {
-  width: 170px;
-  height: 90px;
-  align-items: center;
-  justify-content: center;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
 
-  & .company {
-    display: flex;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      border-color: var(--accentcolor);
+
+      & .icon,
+      & .icon {
+        fill: var(--accentcolor);
+      }
+    }
+
+    @include for-size(mobile) {
+      width: calc((100% / 2) - 30px);
+    }
+
+    @include for-size(tablet) {
+      width: calc((100% / 3) - 30px);
+    }
+
+    @include for-size(desktop) {
+      width: calc((100% / 6) - 30px);
+    }
   }
 }
 .company-logo {
@@ -25,21 +41,6 @@
   align-items: center;
   width: 170px;
   height: 90px;
-
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
-
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover,
-  &:focus {
-    border-color: var(--accentcolor);
-
-    & .icon,
-    & .icon {
-      fill: var(--accentcolor);
-    }
-  }
 }
 .icon {
   fill: #afb1b8;

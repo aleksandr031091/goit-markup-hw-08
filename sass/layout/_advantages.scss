@@ -1,12 +1,31 @@
 .list-advantages {
-  display: flex;
-  margin-top: -30px;
-  margin-left: -30px;
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: -30px;
+    margin-left: -30px;
+  }
 
   & .item {
-    width: calc((100% / 4) - 30px);
-    margin-top: 30px;
-    margin-left: 30px;
+    @include for-size(mobile) {
+    }
+
+    @include for-size(tablet) {
+      margin-top: 30px;
+      margin-left: 30px;
+      width: calc((100% / 2) - 30px);
+    }
+
+    @include for-size(desktop) {
+      margin-top: 30px;
+      margin-left: 30px;
+      width: calc((100% / 4) - 30px);
+    }
 
     &::before {
       display: block;

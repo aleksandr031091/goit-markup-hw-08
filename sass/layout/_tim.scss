@@ -1,32 +1,49 @@
 .section-tim {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   background-color: #f5f4fa;
+
+  @include for-size(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 .person-box {
-  display: flex;
-  margin-top: -30px;
-  margin-left: -30px;
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
 }
-.section-profession {
-  margin-top: 0;
-  margin-bottom: 10px;
-  text-align: center;
 
-  font-size: 16px;
-  line-height: 1.18;
-  color: #757575;
-}
 .card-person {
-  width: calc(100% / 4 - 30px);
-  margin-top: 30px;
-  margin-left: 30px;
-
+  text-align: center;
+  margin-bottom: 30px;
   background: var(--primarycolor);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+
+  @include for-size(tablet) {
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    width: calc((100% / 2) - 30px);
+  }
+
+  @include for-size(desktop) {
+    width: calc((100% / 4) - 30px);
+  }
+}
+.section-profession {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  line-height: 1.18;
+  color: #757575;
 }
 .card-description {
   padding-top: 30px;
