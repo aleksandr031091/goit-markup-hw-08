@@ -9,6 +9,9 @@
     }
   }
 
+  @include for-size(tablet) {
+  }
+
   @include for-size(desktop) {
     margin-left: auto;
 
