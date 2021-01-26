@@ -20,7 +20,7 @@
 
 .subscribe-box {
   @include for-size(tablet) {
-    padding-top: 60px;
+    margin-top: 60px;
     width: calc(100% - 30px);
   }
 

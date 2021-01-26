@@ -23,8 +23,8 @@
 
   transform: translate(-50%, -50%);
 
-  @include for-size(tablet) {
-    width: 450px;
+  @include for-size(mobile) {
+    max-width: 450px;
   }
 
   @include for-size(desktop) {
@@ -45,7 +45,7 @@
   height: 30px;
 
   cursor: pointer;
-  background-position: center;
+  background-size: cover;
   background-color: var(--primarycolor);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;

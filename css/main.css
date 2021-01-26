@@ -192,9 +192,9 @@ img {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .modal {
-    width: 450px;
+    max-width: 450px;
   }
 }
 
@@ -218,7 +218,7 @@ img {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background-position: center;
+  background-size: cover;
   background-color: var(--primarycolor);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -1247,7 +1247,7 @@ img {
 
 @media screen and (min-width: 768px) {
   .subscribe-box {
-    padding-top: 60px;
+    margin-top: 60px;
     width: calc(100% - 30px);
   }
 }
