@@ -182,19 +182,19 @@ img {
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100%;
   background: var(--primarycolor);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 480px) {
   .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     max-width: 450px;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -218,7 +218,6 @@ img {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background-size: cover;
   background-color: var(--primarycolor);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -615,12 +614,12 @@ img {
   color: #212121;
 }
 
-.auth-nav {
+.head .auth-nav {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  .auth-nav {
+  .head .auth-nav {
     display: flex;
     flex-wrap: wrap;
     margin-left: 84px;
@@ -744,12 +743,12 @@ img {
   text-decoration: none;
 }
 
-.site-nav {
+.head .site-nav {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  .site-nav {
+  .head .site-nav {
     display: flex;
   }
 }
@@ -843,25 +842,38 @@ img {
   align-items: center;
   text-align: center;
   background-color: #c4c4c4;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-mobile.jpg");
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .hero {
-    min-width: 480px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-mobile@2x.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
   .hero {
-    min-width: 768px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-tablet@2x.jpg");
   }
 }
 
 @media screen and (min-width: 1200px) {
   .hero {
-    height: 600px;
-    max-width: 1600px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-desktop.jpg");
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-desktop@2x.jpg");
   }
 }
 
@@ -956,8 +968,16 @@ img {
   }
 }
 
-.section-activity {
-  display: none;
+@media screen and (min-width: 480px) {
+  .section-activity {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-activity {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1068,6 +1088,7 @@ img {
   margin-left: 30px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  width: calc((100% / 2) - 30px);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1079,12 +1100,6 @@ img {
 .company .company-box:hover .icon, .company .company-box:focus .icon,
 .company .company-box:focus .icon {
   fill: var(--accentcolor);
-}
-
-@media screen and (min-width: 480px) {
-  .company .company-box {
-    width: calc((100% / 2) - 30px);
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1103,7 +1118,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 170px;
+  width: 100%;
   min-height: 90px;
 }
 
@@ -1137,23 +1152,28 @@ img {
 
 .portfolio-box {
   margin-top: -30px;
-  margin-left: -30px;
+}
+
+.portfolio-box .link {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (min-width: 768px) {
   .portfolio-box {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -30px;
   }
 }
 
 .portfolio-box .items {
   margin-top: 30px;
-  margin-left: 30px;
 }
 
 @media screen and (min-width: 768px) {
   .portfolio-box .items {
+    margin-left: 30px;
     width: calc((100% / 2) - 30px);
   }
 }

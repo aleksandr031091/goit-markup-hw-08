@@ -1,5 +1,10 @@
 .section-activity {
-  display: none;
+  @include for-size(mobile) {
+    display: none;
+  }
+  @include for-size(desktop) {
+    display: flex;
+  }
 }
 .section-direction {
   @include for-size(desktop) {
