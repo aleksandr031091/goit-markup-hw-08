@@ -26,7 +26,6 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   top: 0;
   left: 0;
 
@@ -38,7 +37,17 @@
   @include for-size(tablet) {
     display: none;
   }
+  & .site-nav {
+    margin-bottom: 302px;
+  }
+
+  & .auth-nav {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 64px;
+  }
 }
+
 .social-mobile {
   display: flex;
   list-style: none;

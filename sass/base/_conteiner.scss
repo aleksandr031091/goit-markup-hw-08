@@ -30,13 +30,12 @@
   }
 
   @include for-size(tablet) {
-    align-items: center;
+    align-items: baseline;
     width: 768px;
   }
 
   @include for-size(desktop) {
     width: 1200px;
-    align-items: center;
   }
 }
 .container-footer {
