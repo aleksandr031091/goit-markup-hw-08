@@ -1,0 +1,23 @@
+.button-mobile-menu {
+  display: block;
+  margin-left: auto;
+
+  fill: #212121;
+  border: none;
+  background-color: var(--primarycolor);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: var(--accentcolor);
+  }
+}
+
+.mobile-menu-svg {
+  width: 24px;
+  height: 16px;
+}
+
+.mobile-menu {
+  background-color: red;
+}

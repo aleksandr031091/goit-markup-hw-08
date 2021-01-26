@@ -23,21 +23,19 @@
 }
 .container-head {
   @include for-size(mobile) {
+    display: flex;
     width: 480px;
     margin-left: auto;
     margin-right: auto;
   }
 
   @include for-size(tablet) {
-    display: flex;
     align-items: center;
-
     width: 768px;
   }
 
   @include for-size(desktop) {
     width: 1200px;
-    display: flex;
     align-items: center;
   }
 }

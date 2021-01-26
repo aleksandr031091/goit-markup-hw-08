@@ -1,7 +1,6 @@
 .section-activity {
-  @include for-size(mobile) {
-    display: none;
-  }
+  display: none;
+
   @include for-size(desktop) {
     display: flex;
   }
