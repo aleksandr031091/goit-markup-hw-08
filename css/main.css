@@ -101,9 +101,13 @@ img {
   }
 }
 
+.container-head {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 480px) {
   .container-head {
-    display: flex;
     width: 480px;
     margin-left: auto;
     margin-right: auto;
@@ -112,13 +116,13 @@ img {
 
 @media screen and (min-width: 768px) {
   .container-head {
-    align-items: baseline;
     width: 768px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container-head {
+    align-items: baseline;
     width: 1200px;
   }
 }
@@ -188,17 +192,18 @@ img {
 
 .modal {
   width: 100%;
+  max-height: 609px;
   background: var(--primarycolor);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 450px;
+    width: 450px;
     transform: translate(-50%, -50%);
   }
 }
@@ -619,19 +624,19 @@ img {
   color: #212121;
 }
 
-.head .auth-nav {
+.auth-nav {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  .head .auth-nav {
+  .auth-nav {
     display: flex;
     flex-wrap: wrap;
     margin-left: 84px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) and (min-width: 1200px) {
   .auth-nav {
     margin-left: auto;
   }
@@ -642,12 +647,20 @@ img {
 
 .auth-nav .link {
   display: flex;
+  align-items: center;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 14px;
   letter-spacing: 0.02em;
   color: #757575;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 1200px) {
+  .auth-nav .link {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .auth-nav .link:hover, .auth-nav .link:focus {
@@ -843,7 +856,7 @@ img {
   margin-left: auto;
   fill: #212121;
   border: none;
-  background-color: var(--primarycolor);
+  background-color: transparent;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -857,21 +870,47 @@ img {
   }
 }
 
+.button-menu-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-menu-close .button-menu-close-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.button-menu-close:hover, .button-menu-close:focus {
+  fill: var(--accentcolor);
+}
+
 .mobile-menu-svg {
   width: 24px;
   height: 16px;
 }
 
 .mobile-menu {
-  position: absolute;
+  position: fixed;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  max-height: 796px;
+  overflow: scroll;
   padding: 45px 40px;
   background-color: var(--primarycolor);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -884,20 +923,28 @@ img {
   margin-bottom: 302px;
 }
 
-.mobile-menu .auth-nav {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 64px;
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .social-mobile {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin-right: auto;
+  margin-top: -15px;
+  margin-left: -15px;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.122;
   letter-spacing: 0.02em;
+}
+
+.social-mobile .item {
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .social-mobile .item:not(:last-child) {
@@ -910,11 +957,33 @@ img {
   color: var(--accentcolor);
 }
 
+.mobile-menu-contact {
+  list-style: none;
+  margin-bottom: 64px;
+}
+
+.mobile-menu-contact .link {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+
+.mobile-menu-contact .link-tel {
+  display: block;
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  color: #2196f3;
+}
+
 .logo {
   font-family: Raleway, Oleo Script, sans-serif;
   font-weight: bold;
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 24px;
+  line-height: 1.166;
   letter-spacing: 0.03em;
   color: #212121;
   text-decoration: none;
@@ -923,7 +992,8 @@ img {
 
 @media screen and (min-width: 1200px) {
   .logo {
-    text-align: left;
+    font-size: 26px;
+    line-height: 1.2;
   }
 }
 
@@ -985,6 +1055,7 @@ img {
 
 @media screen and (min-width: 1200px) {
   .hero {
+    height: 600px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/hero/hero-desktop.jpg");
   }
 }
@@ -1003,13 +1074,13 @@ img {
 
 @media screen and (min-width: 480px) {
   .hero-content {
-    width: 380px;
+    max-width: 380px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .hero-content {
-    width: 700px;
+    max-width: 700px;
   }
 }
 
@@ -1250,20 +1321,27 @@ img {
 .portfolio-nav {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
+  margin-top: -15px;
+  margin-left: -15px;
 }
 
 @media screen and (min-width: 768px) {
   .portfolio-nav {
     justify-content: center;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .portfolio-nav {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
+}
+
+.portfolio-nav .items {
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .portfolio-nav .items:not(:last-child) {

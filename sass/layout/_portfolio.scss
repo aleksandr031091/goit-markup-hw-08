@@ -1,16 +1,22 @@
 .portfolio-nav {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
+  margin-top: -15px;
+  margin-left: -15px;
 
   @include for-size(tablet) {
     justify-content: center;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
   @include for-size(desktop) {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
 
+  & .items {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
   & .items:not(:last-child) {
     margin-right: 8px;
   }

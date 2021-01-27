@@ -22,19 +22,21 @@
   }
 }
 .container-head {
+  display: flex;
+  justify-content: space-between;
+
   @include for-size(mobile) {
-    display: flex;
     width: 480px;
     margin-left: auto;
     margin-right: auto;
   }
 
   @include for-size(tablet) {
-    align-items: baseline;
     width: 768px;
   }
 
   @include for-size(desktop) {
+    align-items: baseline;
     width: 1200px;
   }
 }
