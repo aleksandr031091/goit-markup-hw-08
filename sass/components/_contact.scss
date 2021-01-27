@@ -6,11 +6,16 @@
     flex-wrap: wrap;
     margin-left: 84px;
 
+    .items:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
     @include for-size(desktop) {
       margin-left: auto;
 
       .items:not(:last-child) {
         margin-right: 50px;
+        margin-bottom: 0;
       }
     }
   }
