@@ -8,6 +8,8 @@
   @include for-size(tablet) {
     justify-content: center;
     margin-bottom: 30px;
+    margin-top: 0;
+    margin-left: 0;
   }
   @include for-size(desktop) {
     margin-bottom: 50px;
@@ -16,6 +18,11 @@
   & .items {
     margin-top: 15px;
     margin-left: 15px;
+
+    @include for-size(tablet) {
+      margin-top: 0;
+      margin-left: 0;
+    }
   }
   & .items:not(:last-child) {
     margin-right: 8px;
